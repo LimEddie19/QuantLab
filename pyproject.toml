@@ -1,0 +1,26 @@
+# Tells us libraries needed and packaging tools are located inside source
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantlab"
+version = "0.1.0"
+description = "Quantitative trading and backtesting engine"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "yfinance",
+    "pyarrow",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["source"]

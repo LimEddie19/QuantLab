@@ -1,0 +1,15 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyCharm workspace settings
+.idea/
+
+# Downloaded raw market data
+data/raw/
+
+# Test cache
+.pytest_cache/
