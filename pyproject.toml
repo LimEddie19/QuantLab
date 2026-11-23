@@ -15,6 +15,7 @@ dependencies = [
     "yfinance",
     "pyarrow",
     "matplotlib",
+    "pyarrow>=18.0.0",
 ]
 
 [project.optional-dependencies]
