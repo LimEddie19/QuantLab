@@ -1,15 +1,23 @@
-# Python virtual environment
+# IDE settings
+.idea/
+.vscode/
+
+# Virtual environments
 .venv/
+venv/
 
 # Python cache
 __pycache__/
-*.pyc
-
-# PyCharm workspace settings
-.idea/
-
-# Downloaded raw market data
-data/raw/
-
-# Test cache
+*.py[cod]
 .pytest_cache/
+
+# Build artifacts
+*.egg-info/
+build/
+dist/
+
+# Market data
+data/raw/*.parquet
+
+# Environment variables and secrets
+.env
