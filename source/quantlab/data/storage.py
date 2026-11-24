@@ -45,3 +45,22 @@ class ParquetStorage:
 
     def exists(self, ticker: str) -> bool:
         return self._get_path(ticker).exists()
+
+    def update(self, ticker: str, data: pd.DataFrame) -> None:
+        if data.empty:
+            raise ValueError("Cannot update an empty DataFrame")
+
+        if self.exists(ticker):
+            existing = self.load(ticker)
+            merged = pd.concat([existing, data])
+        else:
+            merged = data.copy()
+
+        # Locates duplicated index and uses the latest data for idempotency
+        # The ~ operator inverts the boolean array to exclude the duplicate
+        merged = merged.loc[~merged.index.duplicated(keep="last")]
+        merged = merged.sort_index() # sort by time
+
+        # Saves self to temp file (Atomicity)
+        # Later os.replace replaces the original with the temp if true in save function
+        self.save(ticker, merged)
