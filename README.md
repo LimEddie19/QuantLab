@@ -141,7 +141,7 @@ The tree above shows the initial components; additional modules will be added as
 - [x] Implement a historical OHLCV downloader
 - [x] Implement an OHLCV validator
 - [x] Add initial validator unit tests
-- [ ] Add Parquet storage and reload support
+- [x] Add Parquet storage and reload support
 - [ ] Expand data-quality checks and automated tests
 - [ ] Implement momentum and mean-reversion strategies
 - [ ] Build a backtesting engine with realistic trade execution assumptions
@@ -158,4 +158,4 @@ Historical market data can contain errors, gaps, and corporate-action adjustment
 
 ## License
 
-No license has been specified yet. Add a `LICENSE` file if you want to define how others may use or contribute to this project.
+No license has been specified yet. Will be adding one in the future
